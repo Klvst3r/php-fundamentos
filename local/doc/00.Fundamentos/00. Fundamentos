@@ -1,0 +1,29 @@
+PHP sigue siendo relevante, poderoso y ampliamente utilizado en el desarrollo web.
+ Aunque algunas opiniones cuestionan su vigencia, el setenta y ocho por ciento de los sitios web del mundo, como Instagram, Wikipedia y WordPress, 
+ funcionan con PHP. Esto evidencia claramente su protagonismo y esencialidad en la tecnología actual.
+
+¿Cuáles son las principales ventajas de PHP?
+
+PHP destaca especialmente por tres cualidades:
+
+- Facilidad de integración: con pocas líneas de código es posible conectarse rápidamente a servicios externos, como OpenAI o modelos locales.
+- Implementación del principio SOLID: PHP permite generar un código más limpio, mantenible y adaptable.
+- Resultados inmediatos: pasar de una idea al desarrollo práctico es cuestión de minutos, ofreciendo soluciones rápidas y efectivas.
+
+¿Cómo se crea un asistente de inteligencia artificial con PHP?
+
+Usar PHP para construir un asistente de inteligencia artificial es sencillo y eficaz:
+
+Primero, definimos nuestra variable cliente:
+
+    $cliente = OpenAI::client(getenv('VARIABLE_ENTORNO'));
+
+Luego, estructuramos nuestra solicitud o pregunta:
+
+    $resultado = $cliente->preguntar("¿Por qué aprender PHP hoy?");
+
+De inmediato, obtenemos respuestas coherentes, claras y dinámicas. PHP facilita tareas como la integración con APIs y la manipulación dinámica de datos de forma rápida y eficiente.
+
+¿Qué importancia tiene PHP en el mercado actual?
+
+Actualmente, la demanda en el mercado laboral por profesionales especializados en PHP y en frameworks como Laravel o Symphony sobrepasa significativamente la oferta de desarrolladores capacitados. Esto representa una ventaja competitiva tangible para quienes invierten en aprender y perfeccionar sus habilidades en este lenguaje.

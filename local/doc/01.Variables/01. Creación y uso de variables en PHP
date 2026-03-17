@@ -1,0 +1,102 @@
+La dinámica de cualquier sistema web, como un sitio de cursos en línea, requiere actualizar información constante como el título, precio o fecha de publicación. 
+
+Utilizar variables en PHP facilita gestionar estos cambios para mantener información precisa y actualizada de manera eficaz.
+
+¿Por qué es importante utilizar variables en PHP?
+
+Las variables permiten almacenar información que puede cambiar fácilmente sin necesidad de modificar la estructura básica. 
+
+Al emplear estos elementos, se simplifica la actualización y reutilización de datos esenciales en la programación de una página web.
+
+Un claro ejemplo es un curso con nombre variable: en un inicio podría llamarse "curso de PHP" y posteriormente cambiar a "curso profesional de PHP".
+
+ En lugar de modificar manualmente cada sección, solo actualizamos un único punto.
+
+¿Cómo se crean y usan variables en PHP?
+
+Las variables en PHP siempre comienzan con el símbolo dólar ($). Para utilizarlas, primero indicamos que estamos dentro de un bloque PHP:
+
+
+    <?php
+    $titulo = "curso profesional de PHP";
+    ?>
+
+Esto genera información dinámica reutilizable en cualquier parte del código mediante la instrucción de impresión, como:
+
+    <?php echo $titulo; ?>
+
+Para una sintaxis más simplificada, PHP ofrece una forma corta:
+
+
+    <?= $titulo ?>
+Con esta técnica sencilla puedes lograr un código limpio y rápidamente actualizable.
+
+¿Cómo practicar creando nuevas variables?
+
+Puedes ampliar tus habilidades abordando esta práctica recomendada en el curso:
+
+Crea otras dos variables, una para almacenar el precio del curso y otra para registrar la fecha de publicación.
+Muestra ambas variables en pantalla generando un mensaje que incluya título, precio y fecha de publicación.
+
+Un ejemplo orientativo podría ser:
+
+
+    <?php
+    $titulo = "Laravel";
+    $precio = 29.99;
+    $fechaPublicacion = "15 de octubre de 2023";
+    ?>
+
+    <p>El curso <?= $titulo ?> cuesta <?= $precio ?> dólares y fue publicado el <?= $fechaPublicacion ?>.</p>
+
+
+Ejercicio de la clase:
+
+<?php
+// Variables del curso
+$course = "Curso de PHP";
+$price = 29.99; // Variable para el precio
+$publication_date = "25 de junio de 2025"; // Variable para la fecha
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $course ?></title>
+</head>
+<body>
+    <div class="course-container">
+        <h2><?= $course ?></h2>
+
+        <p class="description">
+        Aprende a desarrollar aplicaciones web dinámicas con PHP. Desde la instalación del entorno hasta la creación de formularios y gestión de sesiones, construirás una app de registro y login aplicando buenas prácticas. Dominarás la sintaxis básica, el uso de variables, arreglos, funciones y la integración con HTML. Este curso te prepara para avanzar hacia la programación orientada a objetos, bases de datos y APIs.
+
+        </p>
+
+        <div class="info-container">
+            <div class="info-item">
+                <span class="info-label">Precio</span>
+                <span class="price-value">$<?= $price ?></span>
+            </div>
+            <div class="info-item">
+                <span class="info-label">Fecha de Publicación</span>
+                <span class="date-value"><?= $publication_date ?></span>
+            </div>
+        </div>
+
+        <a href="#" class="cta-button">¡Inscríbete Ahora!</a>
+    </div>
+</body>
+</html>
+```\<?php// Variables del curso$course = "Curso de PHP";$price = 29.99; // Variable para el precio$publication\_date = "25 de junio de 2025"; // Variable para la fecha?>
+\<!DOCTYPE html>\<html lang="es">\<head>    \<meta charset="UTF-8">    \<meta name="viewport" content="width=device-width, initial-scale=1.0">    \<title>\<?= $course ?>\</title>\</head>\<body>    \<div class="course-container">        \<h2>\<?= $course ?>\</h2>
+&#x20;       \<p class="description">        Aprende a desarrollar aplicaciones web dinámicas con PHP. Desde la instalación del entorno hasta la creación de formularios y gestión de sesiones, construirás una app de registro y login aplicando buenas prácticas. Dominarás la sintaxis básica, el uso de variables, arreglos, funciones y la integración con HTML. Este curso te prepara para avanzar hacia la programación orientada a objetos, bases de datos y APIs.
+&#x20;       \</p>
+&#x20;       \<div class="info-container">            \<div class="info-item">                \<span class="info-label">Precio\</span>                \<span class="price-value">$\<?= $price ?>\</span>            \</div>            \<div class="info-item">                \<span class="info-label">Fecha de Publicación\</span>                \<span class="date-value">\<?= $publication\_date ?>\</span>            \</div>        \</div>
+&#x20;       \<a href="#" class="cta-button">¡Inscríbete Ahora!\</a>    \</div>\</body>\</html>
+
+![]()![]()![](https://static.platzi.com/media/user_upload/upload-f3ca4817-9edc-4a42-862e-407e078e3ab9.png)```js
+
+
