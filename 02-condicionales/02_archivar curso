@@ -1,0 +1,131 @@
+Cuando un curso deja de tener actualizaciones podemos marcarar el curso como desactualizado y podemos archivarlo.
+
+Para ello podemos partir de la plantilla anterior
+
+
+<?php
+$course ="Curso Profesional de PHP y Laravel";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$course ?></title>
+</head>
+
+<body>
+    <h1>Bienvenido <?=$course ?></h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis voluptate, omnis molestiae, tenetur aperiam corrupti, voluptates non nisi pariatur est inventore itaque dolores aliquam id libero quidem a cupiditate!</p>
+</body>
+
+</html>
+
+
+vamos a agregar una nueva variable para los casos que tengamos que archivar el curso.
+
+Esta variable puede tener alores de falso o verdadero.
+
+
+  <?php
+    //condicionales
+if ($archived) {
+    echo "<p style='color: redd;'>El curso esta archivado</p>";
+} else {
+    echo "<p style='color: green;'>El curso esta activo</p>";    
+}
+    ?>
+
+Aunque existe una forma mas estructurada de trabajar con los condicionales.
+
+Cambiamos la siguiente estructura:
+
+   <?php if ($archived): ?>
+    <p style='color: redd;'>El curso esta archivado</p>
+    <?php else: ?>
+<p style='color: green;'>El curso esta activo</p>   
+
+  <?php endif  ?>
+
+
+  De esta forma separamos la logica de la programacion con la vista de presentación.
+
+  ya no se muestra directamente echo, imprime este mensaje, tenemos que si es verdadero muestra cierto segemento de codigo, pero si es false muestra otro segmento de codigo.
+
+  
+
+  eto es mas profesional, ahora, sitenemos otro tipo de información, ya que estamos integrando codigo de programación dentro d euna presentación, entonces podemos tener una tercera forma 
+
+  En que podemos trabajar los condicionales.
+
+  Por ejemplo vamos a hablar del estatus y hacemos algo que se lama operador ternario.
+
+  DEMANERA QUE PODEMOS PROGRAMAR TODO ETO:
+
+      
+    <?php if ($archived): ?>
+    <p style='color: redd;'>El curso esta archivado</p>
+    <?php else: ?>
+<p style='color: green;'>El curso esta activo</p>   
+
+  <?php endif  ?>
+
+  En unsa sola lina:
+
+  $status = $archived ? "archivado" : "activo";
+
+  Esto se traduce a lo siguiente.
+
+  Esta archivado, entones muestra el mensaje archivado, de lo contrario, muestra su alternativa, es decir el curso esta activo. La idea es conseguir un codigo mucho mas limpioy hacemos basicamente que el sistema en la parte de presentación se quede con la presentación y en la parte de programación se quede con la logica de programación.
+  Para la impresion cambiamos a:
+
+  <?php
+$course ="Curso Profesional de PHP y Laravel";
+
+$archived = true; //Puede ser tambien el valor false
+
+$status = $archived ? "archivado" : "activo";
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?=$course ?></title>
+</head>
+
+<body>
+    <h1>Bienvenido <?=$course ?></h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis voluptate, omnis molestiae, tenetur aperiam corrupti, voluptates non nisi pariatur est inventore itaque dolores aliquam id libero quidem a cupiditate!</p>
+    
+    <p> Este curso esta <?=$status ?></p>
+
+</body>
+
+</html>
+
+
+
+tenemos el mismo formto de impresion, ahora si cambiamos el estatus de un curso la informacion se actualiza de manera dinamica.
+
+Ahora tenemos las tres formas de escribir condicionales.
+
+Ahora nuestro sistema puede tomar desciciones haciuendo que el proyecrto sea adaptable al mundo real.
+tendremos un curso de pensamiento logico que ayudara al tema de conicionales. 
+
+
+finalente vamos a darle estilo a nuestro codigo.
+
+Conceptos de PHP que se están aplicando
+Variables ($course, $price, $level).
+Operador ternario ($status).
+match() para mostrar recomendaciones según el nivel.
+Estructuras condicionales if.
+Impresión corta con <?= ?>.
+Formateo de números con number_format().
+Mezcla de PHP y HTML para crear plantillas dinámicas.
+

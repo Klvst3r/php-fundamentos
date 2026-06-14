@@ -1,0 +1,64 @@
+RESUMEN
+Las condicionales en PHP te permiten que tu sistema tome decisiones según el valor de una variable. Si trabajas con un proyecto donde un curso puede estar archivado o activo, necesitas una lógica que muestre un mensaje distinto en cada caso, y esto se resuelve con tres formas diferentes de escribir condicionales.
+
+¿Cómo preparar el archivo para trabajar condicionales?
+
+Antes de escribir lógica, necesitas un espacio limpio donde experimentar sin romper lo que ya tienes.
+
+El primer paso es duplicar el archivo de la práctica anterior y renombrarlo como 02-condicionales.php. Las variables que ya aprendiste se mantienen, pero ahora sumas una nueva que represente el estado de archivado del curso [00:14].
+
+Esa variable puede tener dos valores posibles:
+
+true: el curso está archivado y la información puede estar desactualizada.
+false: el curso está activo y disponible con normalidad.
+La idea es que el sistema lea ese valor y, en función de él, muestre un mensaje u otro al usuario.
+
+¿Cuál es la sintaxis básica del if else en PHP?
+
+La estructura if/else es la forma más conocida de tomar decisiones en cualquier lenguaje de programación.
+
+En PHP abres un bloque, evalúas la condición y defines qué hacer en cada caso. Si la variable de archivado es verdadera, imprimes "este curso está archivado". De lo contrario, muestras "este curso está activo" [00:46].
+
+¿Qué hace la estructura if else en PHP? Evalúa una condición booleana. Si se cumple, ejecuta un bloque de código; si no se cumple, ejecuta el bloque alternativo definido en else.
+
+Al abrir el archivo en el navegador con la URL 02-condicionales.php, verás el mensaje correspondiente al valor actual de la variable. Cambias el valor, recargas y el mensaje cambia. Así de directo.
+
+¿Cómo separar la lógica PHP de la presentación HTML?
+
+Mezclar echo con etiquetas HTML funciona, pero ensucia el código y lo hace difícil de mantener.
+
+La segunda forma de escribir condicionales usa la sintaxis alternativa de PHP: abres el if con dos puntos, escribes HTML puro adentro y cierras con endif. El resultado visual es idéntico, pero la lectura mejora muchísimo porque la presentación queda separada de la lógica de programación [01:35].
+
+Esto es clave cuando tu proyecto crece. Un diseñador puede tocar el HTML sin preocuparse por la lógica, y tú puedes ajustar la lógica sin romper el diseño.
+
+¿Qué ventaja tiene esta sintaxis alternativa?
+
+La principal es legibilidad. Cuando alguien revisa el archivo, identifica de un vistazo qué parte es estructura y qué parte es decisión.
+
+¿Qué es el operador ternario y cuándo conviene usarlo?
+
+La tercera forma es la más compacta y se llama operador ternario.
+
+El operador ternario condensa un if/else completo en una sola línea. La sintaxis es: condición, signo de interrogación, valor si es verdadero, dos puntos, valor si es falso. Lo asignas a una variable como $estatus y luego la imprimes donde la necesites [02:30].
+
+¿Qué es el operador ternario en PHP? Es una forma abreviada del if else que evalúa una condición y devuelve uno de dos valores en una sola línea, ideal para asignaciones simples.
+
+En la práctica queda así: si el curso está archivado, $estatus guarda "archivado"; si no, guarda "activo". Luego escribes en el HTML "este curso está $estatus" y listo.
+
+Código más limpio y corto.
+Presentación enfocada en mostrar.
+Lógica enfocada en decidir.
+Este enfoque acerca tu proyecto al mundo real, donde los sistemas necesitan adaptarse a múltiples estados sin volverse caóticos.
+
+¿Cómo aplicar condicionales a un nivel de curso?
+
+Una vez que dominas las tres formas, puedes escalar la lógica a más de dos opciones.
+
+El reto es crear una variable llamada nivelDelCurso que pueda tomar tres valores distintos y mostrar un mensaje diferente para cada uno [03:25]:
+
+Básico: "recomendado para quienes recién comienzan en programación".
+Intermedio: "recomendado para estudiantes que tienen conocimientos básicos de programación".
+Avanzado: "este curso es ideal para estudiantes con conocimientos sólidos de programación".
+¿Cuándo uso if else if en lugar de un ternario? Cuando tienes más de dos caminos posibles. El ternario sirve para decisiones binarias; con tres o más opciones, el if/elseif/else es mucho más claro.
+
+Este tipo de ejercicio te entrena el pensamiento lógico, una habilidad transversal que vas a usar en cualquier lenguaje, no solo en PHP. Cuéntame en los comentarios qué forma de escribir condicionales te resulta más natural y cómo resolviste el reto del nivel del curso.
