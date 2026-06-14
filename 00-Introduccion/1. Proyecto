@@ -1,0 +1,103 @@
+RESUMEN
+PHP no está muerto, está más vivo que nunca. El 78% de la web funciona con PHP: Instagram, Wikipedia y WordPress son apenas tres ejemplos de gigantes que dependen de este lenguaje para operar a diario. Si quieres entender por qué aprender PHP hoy sigue siendo una decisión inteligente, aquí va la respuesta sin rodeos.
+
+La narrativa de que PHP pasó de moda choca con los datos. La realidad es que domina la web, se integra con tecnologías modernas como inteligencia artificial y abre puertas laborales reales. Vamos a ver por qué.
+
+¿Por qué PHP sigue siendo relevante en el desarrollo web?
+
+Hay tres razones que explican su vigencia y que vale la pena tener claras antes de escribir tu primera línea de código.
+
+Facilidad de integración. Conectar PHP con servicios externos como OpenAI o modelos locales requiere apenas unas pocas líneas. Esa simplicidad acelera cualquier proyecto que necesite hablar con APIs.
+Soporte para principios SOLID. PHP permite aplicar estos principios de diseño orientado a objetos para escribir un código más limpio, mantenible y adaptable. No es un lenguaje de juguete, es una herramienta profesional.
+Resultados inmediatos. Pasas de la idea a la aplicación en minutos, sin configuraciones eternas ni ceremonias innecesarias.
+¿PHP está muerto en 2024? No. El 78% de los sitios web del mundo lo usan, incluyendo Wikipedia, Instagram y todo el ecosistema de WordPress. La demanda laboral incluso supera la oferta de programadores capacitados.
+
+¿Cómo se ve PHP integrándose con inteligencia artificial?
+
+Uno de los mitos más comunes es que PHP no sirve para proyectos modernos como IA. La demostración práctica desmiente eso en segundos.
+
+El flujo es directo: declaras una variable cliente igual a OpenAI::client, recuperas tu variable de entorno con la API key, y programas un resultado. Cambias la pregunta, por ejemplo "¿por qué aprender PHP hoy?", ejecutas y recibes la respuesta del modelo. Así de simple.
+
+En ocas líneas tienes un asistente de inteligencia artificial completamente funcional. Eso significa integración con APIs, manipulación de datos y respuestas dinámicas, todo con una sintaxis clara y elegante.
+
+¿Qué habilidades técnicas se ponen en juego en este flujo?
+
+Aunque parezca un ejemplo corto, hay varios conceptos trabajando en conjunto que conviene nombrar para no perderlos de vista.
+
+Variables de entorno. Permiten guardar credenciales sensibles como la API key fuera del código fuente, una práctica básica de seguridad.
+Resolución estática con ::. El operador de doble dos puntos (scope resolution operator) sirve para acceder a métodos estáticos como OpenAI::client, una pieza clave de la sintaxis orientada a objetos en PHP.
+Consumo de APIs. Enviar un prompt y recibir una respuesta dinámica del modelo es el patrón base de cualquier integración moderna con servicios de IA.
+¿Qué necesito para conectar PHP con OpenAI? Una API key guardada como variable de entorno, el cliente OpenAI::client instanciado y una llamada que envíe tu pregunta al modelo. Con eso ya tienes respuestas dinámicas funcionando.
+
+¿Qué frameworks de PHP debo conocer para crecer profesionalmente?
+
+Dominar el lenguaje base es solo el primer paso. El verdadero salto profesional ocurre cuando entras a su ecosistema de frameworks.
+
+Laravel. Es el framework más popular para construir aplicaciones web modernas con PHP, conocido por su sintaxis expresiva y su comunidad enorme.
+Symfony. Más enterprise, modular y robusto, se usa en proyectos grandes donde la arquitectura y la escalabilidad son críticas.
+Quien domina PHP junto con Laravel o Symfony tiene una ventaja real en el mercado: la demanda supera a la oferta de programadores capacitados en estas tecnologías. Eso se traduce en mejores salarios y más oportunidades.
+
+¿Qué es mejor aprender, Laravel o Symfony? Laravel si buscas velocidad de desarrollo y proyectos ágiles. Symfony si vas hacia aplicaciones empresariales grandes que necesitan modularidad y arquitectura sólida. Ambos son excelentes puntos de entrada al mercado profesional.
+
+¿Qué viene después de esta introducción?
+
+La demostración con OpenAI fue rápida a propósito, para mostrarte el potencial. En las próximas clases vamos a construir cada pieza paso a paso, sin saltarnos fundamentos.
+
+Vas a entender cómo se estructura un proyecto en PHP, cómo conectarte a APIs externas, cómo manipular datos y cómo aplicar principios SOLID para que tu código no se convierta en un dolor de cabeza a los seis meses.
+
+Si alguna vez te dijeron que PHP era cosa del pasado, ya tienes argumentos para responder. ¿Tú qué proyecto te gustaría construir primero con PHP? Cuéntamelo en los comentarios.
+
+Proyectos como Instagram, _Wikipedia, Wordpress, son ejemplos de los impulsos por php, la realidad php domina la web. PHP destaca por tres razoines fundamentales.
+
+- Facilidad de integración. Por ejemplo conectarnos a OpenAI, los modelos locales requieren apenas de pocas lineas.
+    
+
+- PHP permite implementar principios solid: 
+    S-Single Responsability Principle (SRP)
+    O-Open/Closed Principle (OCP)
+    L-Liskov Substitution Principle (LSB)
+    I-Interface Segregation Principle (ISP)
+    D-Dependency Inversion Principle (DIP)
+    
+    PAra alcanzar precisamente un codigo más limpio, mantenible y adaptable
+
+- Proporciona resultados inmediatos. PAsa de la idea a la aplicación en minutos.
+
+Ejemplo.
+
+<?php
+
+require __DIR__.'/bootstrap.php';
+
+//Comenzamos trabajando con nuestra variuablke cliente.
+//Recuperamos a nuestravaraible de entorno
+$client=Open_AI::Client($_ENV['OPENAI_API_KEY']);
+
+//Ahora programamos un resultado.
+$result = $client->chat()->create([
+    'model' => 'gpt-3.5-turbo',
+    'messages' => [
+        [
+            'role' => 'user',
+            'content' => 'Porque aprender PHP hoy?'
+        ]
+    ],
+]);
+
+//esperamos un rsultado y esta es la respuuesta:
+echo $result['choices'][0]['message']['content'];
+
+
+esperamos un resultado y la respuesta la dara en la terminal.
+
+Con algo tan sencillo tenemos un asistente de inteligencia artificial completamente funcional en segundos.
+
+Integración con API, maniupulación de datos, respuestas dinámicas, todo con una sintaxis clara, directa y elegante.
+
+Vamos a realizar paso a paso el proyecto hasta quedar funcionando.
+
+Quien domiuna PHP y su ecosistema, tiene un aventaja importante en el marcado. La demanda supera a la oferta sobre todo para programadores que conocen los frameworks profesionales comoLarvel
+
+o Symphony, es un lenguaje que abre puertas.
+
+
