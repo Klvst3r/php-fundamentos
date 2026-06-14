@@ -1,0 +1,516 @@
+RESUMEN
+Cuando un mismo elemento tiene varias características, las variables sueltas dejan de ser prácticas. Aquí entra el concepto de array en PHP, una estructura de datos que agrupa varios valores bajo un mismo nombre y los organiza por posiciones. Si estás aprendiendo a escribir código limpio, este recurso te ayuda a entender cuándo y por qué reemplazar variables individuales por un arreglo.
+
+Por qué usar un array en lugar de variables sueltas
+
+Imagina que estás trabajando con un curso y quieres registrar sus etiquetas. La primera tentación es crear una variable por cada etiqueta: $etiqueta1 = "HTML", $etiqueta2 = "CSS", $etiqueta3 = "JavaScript". Visualmente funciona, y el navegador muestra exactamente lo que el equipo de diseño espera. Pero a nivel de código hay un problema: estás duplicando estructura para representar elementos de la misma categoría.
+
+Y aquí viene lo interesante. Cuando varios valores pertenecen al mismo concepto (las etiquetas de un curso), lo correcto es agruparlos. Por eso pasamos de etiqueta en singular a etiquetas en plural, y reemplazamos las variables por un arreglo que abre con corchete y contiene todos los valores juntos [1:30].
+
+¿Qué es un array en PHP? Es una estructura de datos que guarda varios elementos de una misma categoría dentro de una sola variable, organizándolos por posiciones numéricas llamadas índices.
+
+Cómo funcionan los índices de un arreglo en PHP
+
+Un arreglo no guarda los valores al azar: cada elemento tiene una posición o índice que empieza en cero. Esa es la regla que necesitas memorizar antes de imprimir cualquier dato [2:00].
+
+Si tu arreglo $etiquetas contiene ["PHP", "Laravel", "JavaScript"], así se accede a cada valor:
+
+Posición 0: PHP, el primer elemento del arreglo.
+Posición 1: Laravel, el segundo elemento.
+Posición 2: JavaScript, el tercer elemento.
+Entonces, cuando antes escribías $etiqueta1 para imprimir HTML, ahora escribes $etiquetas[0] para pedirle al arreglo el elemento de la primera posición. La lógica cambia de "dame la variable etiqueta uno" a "de todas estas etiquetas, pásame la primera".
+
+¿Por qué los arrays empiezan en 0 y no en 1? Porque el índice representa el desplazamiento desde el inicio del arreglo. El primer elemento está a cero posiciones del comienzo, por eso su índice es 0.
+
+Cómo imprimir los valores de un arreglo dentro de una lista HTML
+
+El resultado visual es idéntico al ejercicio anterior con variables: un título y una lista con las etiquetas del curso. Lo que cambia es el código. En lugar de tres variables separadas, ahora tienes una sola variable $etiquetas y accedes a cada valor con su índice correspondiente dentro de los <li> de la lista.
+
+Así garantizas tres cosas en tu código: orden, elegancia y profesionalismo. Tres palabras que suenan abstractas hasta que ves la diferencia entre veinte variables sueltas y un arreglo bien estructurado.
+
+Cuándo conviene reemplazar variables por un arreglo
+
+La señal es clara: cuando varios datos pertenecen a la misma categoría, deben vivir en la misma estructura. Las etiquetas de un curso son etiquetas, no son tres conceptos distintos. Lo mismo aplicaría para una lista de estudiantes, los precios de un producto o los nombres de las secciones de tu sitio.
+
+Guardar todos los elementos de un tema en una misma variable evita la duplicación y prepara tu código para crecer sin romperse.
+
+Reto práctico para afianzar el concepto de índices
+
+Crea un nuevo arreglo con cuatro elementos. Pero no los imprimas todos: muestra únicamente el de la posición 2 y el de la última posición. Es un ejercicio corto que te obliga a contar desde cero y a pensar en cómo se mapean los índices a los valores reales
+
+Cuando tenemos diferentes caracteristicas en un mismo elemento, ahi ya no es practico trabajar con el concepto de variables, necesitamos una nueva estructura, para poder ocupar el elemento de conjunto de datos.
+
+Para esto vamos a tener nuestro archivo.
+
+<?php
+
+// =========================
+// CONFIGURACIÓN DE NIVELES
+// =========================
+
+$levels = [
+
+    'basic' => [
+        'name' => 'Básico',
+        'message' => 'Recomendado para quienes recién comienzan en programación.',
+        'bg' => '#eaf4fc',
+        'border' => '#3498db',
+        'topics' => [
+            'HTML',
+            'CSS',
+            'PHP Básico'
+        ]
+    ],
+
+    'intermediate' => [
+        'name' => 'Intermedio',
+        'message' => 'Recomendado para estudiantes que tienen conocimientos básicos de programación.',
+        'bg' => '#f5ede0',
+        'border' => '#f39c3d',
+        'topics' => [
+            'POO',
+            'Formularios',
+            'MySQL'
+        ]
+    ],
+
+    'advanced' => [
+        'name' => 'Avanzado',
+        'message' => 'Ideal para estudiantes con conocimientos sólidos de programación.',
+        'bg' => '#f6e5e7',
+        'border' => '#d9534f',
+        'topics' => [
+            'Laravel',
+            'APIs REST',
+            'Patrones de Diseño'
+        ]
+    ]
+];
+
+// =========================
+// NIVEL SELECCIONADO
+// =========================
+
+$selectedLevel = $_GET['level'] ?? 'basic';
+
+$courseData = $levels[$selectedLevel];
+
+// =========================
+// DATOS DEL CURSO
+// =========================
+
+$course = "Curso Profesional de PHP";
+
+$description = "Aprende a desarrollar aplicaciones web dinámicas con PHP. Desde la instalación del entorno hasta la creación de formularios y gestión de sesiones, construirás una aplicación completa aplicando buenas prácticas.";
+
+$price = 29.99;
+
+$publishDate = "11 de agosto de 2025";
+
+$archived = false;
+
+$status = $archived ? "archivado" : "activo";
+
+?>
+
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $course ?></title>
+
+    <style>
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            font-family:Arial, Helvetica, sans-serif;
+            background:#f4f4f4;
+            padding:30px;
+        }
+
+        .container{
+            max-width:900px;
+            margin:auto;
+            background:white;
+            padding:40px;
+            border-radius:10px;
+            box-shadow:0 0 10px rgba(0,0,0,.1);
+            text-align:center;
+        }
+
+        h1{
+            color:#2d3e50;
+            font-size:55px;
+            margin-bottom:20px;
+        }
+
+        .line{
+            height:4px;
+            background:#3498db;
+            width:90%;
+            margin:20px auto;
+        }
+
+        form{
+            margin:20px 0;
+        }
+
+        select{
+            padding:5px;
+            font-size:16px;
+        }
+
+        .description{
+            font-size:20px;
+            line-height:1.8;
+            color:#555;
+            margin:30px 0;
+        }
+
+        .topics{
+            margin:30px 0;
+        }
+
+        .topics h3{
+            color:#2d3e50;
+            margin-bottom:15px;
+        }
+
+        .topics ul{
+            list-style:none;
+            display:flex;
+            justify-content:center;
+            flex-wrap:wrap;
+            gap:10px;
+        }
+
+        .topics li{
+            background:#3498db;
+            color:white;
+            padding:10px 18px;
+            border-radius:20px;
+            font-weight:bold;
+        }
+
+        .level-box{
+            padding:25px;
+            border-radius:8px;
+            margin:40px 0;
+        }
+
+        .level-box h2{
+            color:#2d3e50;
+            margin-bottom:10px;
+        }
+
+        .level-box p{
+            font-size:18px;
+            font-weight:bold;
+            color:#2d3e50;
+        }
+
+        .info{
+            display:flex;
+            justify-content:center;
+            gap:100px;
+            margin:40px 0;
+        }
+
+        .info h3{
+            color:#999;
+            margin-bottom:15px;
+        }
+
+        .price{
+            color:#d9534f;
+            font-size:40px;
+            font-weight:bold;
+        }
+
+        .date{
+            color:#45b36b;
+            font-size:35px;
+            font-weight:bold;
+        }
+
+        .btn{
+            display:inline-block;
+            text-decoration:none;
+            background:#3498db;
+            color:white;
+            padding:15px 30px;
+            border-radius:40px;
+            font-size:24px;
+            font-weight:bold;
+            margin-top:20px;
+        }
+
+        .status{
+            margin-top:25px;
+            font-size:22px;
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>
+        <?= $course ?> - <?= $courseData['name'] ?>
+    </h1>
+
+    <div class="line"></div>
+
+    <form method="GET">
+
+        <label for="level">
+            Selecciona el nivel del curso:
+        </label>
+
+        <select
+            name="level"
+            id="level"
+            onchange="this.form.submit()">
+
+            <option
+                value="basic"
+                <?= $selectedLevel === 'basic' ? 'selected' : '' ?>>
+                Básico
+            </option>
+
+            <option
+                value="intermediate"
+                <?= $selectedLevel === 'intermediate' ? 'selected' : '' ?>>
+                Intermedio
+            </option>
+
+            <option
+                value="advanced"
+                <?= $selectedLevel === 'advanced' ? 'selected' : '' ?>>
+                Avanzado
+            </option>
+
+        </select>
+
+    </form>
+
+    <p class="description">
+        <?= $description ?>
+    </p>
+
+    <div class="topics">
+
+        <h3>Tecnologías que aprenderás</h3>
+
+        <ul>
+
+            <?php foreach ($courseData['topics'] as $topic): ?>
+
+                <li><?= $topic ?></li>
+
+            <?php endforeach; ?>
+
+        </ul>
+
+    </div>
+
+    <div
+        class="level-box"
+        style="
+            background: <?= $courseData['bg'] ?>;
+            border-left: 6px solid <?= $courseData['border'] ?>;
+        "
+    >
+
+        <h2>
+            Nivel: <?= $courseData['name'] ?>
+        </h2>
+
+        <p>
+            <?= $courseData['message'] ?>
+        </p>
+
+    </div>
+
+    <div class="info">
+
+        <div>
+
+            <h3>PRECIO</h3>
+
+            <div class="price">
+                $<?= number_format($price, 2) ?>
+            </div>
+
+        </div>
+
+        <div>
+
+            <h3>FECHA DE PUBLICACIÓN</h3>
+
+            <div class="date">
+                <?= $publishDate ?>
+            </div>
+
+        </div>
+
+    </div>
+
+    <?php if(!$archived): ?>
+
+        <a href="#" class="btn">
+            ¡Inscríbete Ahora!
+        </a>
+
+    <?php endif; ?>
+
+    <p class="status">
+        Este curso está <?= $status ?>.
+    </p>
+
+</div>
+
+</body>
+</html>
+
+Coimo estamos trabajando con el ejemplo de un cruso, el cual cuenta con etiquetas, entonces.
+
+Escribimos 
+
+ 'basic' => [
+        'name' => 'Básico',
+        'message' => 'Recomendado para quienes recién comienzan en programación.',
+        'bg' => '#eaf4fc',
+        'border' => '#3498db',
+        'topics' => [
+            'HTML',
+            'CSS',
+            'PHP Básico'
+        ],
+
+        Esto no tiene definido un arreglo bidimensional, para poder definir los elementos qe integran un nivel basico del curso.
+
+        y asi podemos crear un nuevo arreglo con los elementos que integran un curso intermedio.
+
+
+         'intermediate' => [
+            'name' => 'Intermedio',
+            'message' => 'Recomendado para estudiantes que tienen conocimientos básicos de programación.',
+            'bg' => '#f5ede0',
+            'border' => '#f39c3d',
+            'topics' => [
+                'POO',
+                'Formularios',
+                'MySQL'
+            ]
+        ],
+
+        y asi podemos crear un nuevo arreglo con los elementos que integran un curso avanzado.
+
+        
+         'advanced' => [
+            'name' => 'Avanzado',
+            'message' => 'Ideal para estudiantes con conocimientos sólidos de programación.',
+            'bg' => '#f6e5e7',
+            'border' => '#d9534f',
+            'topics' => [
+                'Laravel',
+                'APIs REST',
+                'Patrones de Diseño'
+            ]
+        ],
+        
+depues podemos agrupar estos arreglo en un arerglo mas grande
+
+$levels = [
+
+    'basic' => [
+        'name' => 'Básico',
+        'message' => 'Recomendado para quienes recién comienzan en programación.',
+        'bg' => '#eaf4fc',
+        'border' => '#3498db',
+        'topics' => [
+            'HTML',
+            'CSS',
+            'PHP Básico'
+        ]
+    ],
+
+    'intermediate' => [
+        'name' => 'Intermedio',
+        'message' => 'Recomendado para estudiantes que tienen conocimientos básicos de programación.',
+        'bg' => '#f5ede0',
+        'border' => '#f39c3d',
+        'topics' => [
+            'POO',
+            'Formularios',
+            'MySQL'
+        ]
+    ],
+
+    'advanced' => [
+        'name' => 'Avanzado',
+        'message' => 'Ideal para estudiantes con conocimientos sólidos de programación.',
+        'bg' => '#f6e5e7',
+        'border' => '#d9534f',
+        'topics' => [
+            'Laravel',
+            'APIs REST',
+            'Patrones de Diseño'
+        ]
+    ]
+];
+
+
+se muestra el contenido que agrupa ahora no solo a los elementos descriptivos de un nivel, sino un nivel donde puede agrupar a todos los niveles y sus caracteristicas individuales de cada nivel.
+
+y para acceder a esta iformacion necesitamos una doble notacion de corchetes
+
+<?= $levels['basic']['name'] ?>
+<?= $levels['intermediate']['message'] ?>
+<?= $levels['advanced']['topics'][0] ?>
+<?= $levels['advanced']['topics'][1] ?>
+<?= $levels['advanced']['topics'][2] ?>
+
+y podemos recorrer estos elementos de diferentes maneras, por ejemplo, para recorrer los niveles, podemos hacerlo de la siguiente manera:
+
+<?php foreach ($levels as $level): ?>
+
+    <h2><?= $level['name'] ?></h2>
+    <p><?= $level['message'] ?></p>
+    <ul>
+
+        <?php foreach ($level['topics'] as $topic): ?>
+
+            <li><?= $topic ?></li>
+
+        <?php endforeach; ?>
+
+    </ul>
+
+<?php endforeach; ?>
+
+esto muestra el contenido de los niveles del curso.
+
+Asi al hablar de diferentes caracteristicas en un mismo elemento, corremos el riesgo de duplicar codigo, la silucioin es trabajar nombre en plurarl porq qeu tendremos diferentes valores.
+
+En un arreglo se trabaja en posiiones, la primera posciion es el indice 0 [0], y asi con los siguientes valores.
+
+ahora podemos trabajar con mas nivel de complejidad. por ejemplo, en cada nivel podemos tener diferentes cursos. por lo tanto, podemos tener un arreglo bidimensional, donde cada elemento del arreglo principal sea un arreglo que contenga los cursos de ese nivel.
+
+Con nuestra nueva estructura de datos, tenemos diferentes niveles y cada nivel iene diferentes caractesristicas que corresponden a ese nivel, agrupados y organizados en un aestructura similar.
+
+Ahor apodemos almacenar todos los elementos de un tema en una misma estructura, ese es el concepto de array, el cual garantiza en todo sistema, el orden la elegncia y profesionalismo de nuestro codigo.
+
+en nuestro caso tenemos un arragy con varios elementos, que muestran el de la posion seleccionada, trabar con indices.
+
