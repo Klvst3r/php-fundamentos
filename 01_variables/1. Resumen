@@ -1,0 +1,57 @@
+RESUMEN
+Cuando trabajas con sitios web, el contenido estático se vuelve un problema apenas algo cambia. Las variables en PHP resuelven esto al permitirte almacenar información clave (como el título de un curso) y reutilizarla en toda tu página, de forma que un solo cambio se refleje en todos lados.
+
+¿Por qué necesitas variables en PHP?
+
+Imagina que tienes una página con el texto curso de PHP repetido en el título, en el encabezado y en un párrafo de bienvenida. Si mañana ese curso pasa a llamarse Curso profesional de PHP, tendrías que buscar y reemplazar cada aparición manualmente. Y aquí viene lo interesante: con una variable defines el nombre una sola vez y PHP se encarga del resto.
+
+Ese es el corazón de cualquier sistema dinámico. Plataformas como Platzi funcionan así: el nombre de un curso vive en una variable, no incrustado a mano en el HTML.
+
+¿Qué es una variable en PHP? Es un contenedor que guarda información (texto, números u otros datos) bajo un nombre que empieza con el símbolo $. Puedes reutilizar ese valor en cualquier parte de tu código.
+
+¿Cómo se declara una variable en PHP?
+
+La estructura es directa. Abres una etiqueta de PHP, defines la variable con el signo de dólar y le asignas un valor con el operador igual [00:54].
+
+php
+
+<?php $titulo = "Curso profesional de PHP"; ?>
+Algunos puntos importantes sobre esta sintaxis:
+
+Toda variable empieza con el símbolo $.
+El valor se asigna con el signo =.
+Las cadenas de texto van entre comillas.
+Cada instrucción termina con punto y coma.
+Este pequeño bloque ya es código de programación dentro de tu HTML, y le indica a PHP que ahí vive información que vas a reutilizar.
+
+¿Cómo imprimir una variable en pantalla?
+
+Tienes dos formas de mostrar el valor de una variable dentro del HTML. La primera usa la palabra clave echo, ideal cuando estás dentro de un bloque PHP completo.
+
+php
+
+<title><?php echo $titulo; ?></title>
+La segunda es la forma corta o etiqueta de impresión <?= ... ?>, que ejecuta un echo implícito y deja el código más limpio [02:15].
+
+html
+
+<h1>Bienvenido al <?= $titulo ?></h1> <p>Bienvenido al curso de <?= $titulo ?></p>
+Con este patrón, si cambias el valor de $titulo a Laravel, se actualizan al mismo tiempo el title de la pestaña, el encabezado y el párrafo. Un solo cambio, efecto en cascada.
+
+¿Cuál es la diferencia entre echo y la forma corta <?= ?>? echo requiere abrir y cerrar la etiqueta PHP completa y termina con punto y coma. La forma corta <?= ?> imprime directamente el valor, sin la palabra echo y sin punto y coma, lo que produce un código más legible cuando solo quieres mostrar contenido.
+
+¿Qué tipos de datos puede guardar una variable?
+
+Una variable en PHP no se limita a texto. Puede almacenar distintos tipos de datos que irás conociendo a lo largo del curso, como:
+
+Cadenas de texto (strings), por ejemplo el título del curso.
+Números, útiles para precios o cantidades.
+Fechas, ideales para publicaciones o eventos.
+Otros tipos más avanzados que aparecerán en clases siguientes.
+Esta flexibilidad es lo que convierte a PHP en una herramienta poderosa para construir sistemas dinámicos donde la información cambia con frecuencia.
+
+¿Cómo organizar tu archivo de práctica?
+
+Para seguir el ejercicio, crea un archivo llamado 01-variables.php dentro de tu proyecto. Si tu entorno local apunta a php-platzi.test, accederás al archivo desde la URL php-platzi.test/01-variables.php [00:18]. Mantener nombres claros desde el inicio te ayuda a ubicar cada tema sin perder tiempo.
+
+Ahora te toca a ti. Crea dos variables nuevas: una para el precio y otra para la fecha de publicación del curso. Luego muestra en pantalla un mensaje con esta estructura: el curso título cuesta precio y fue publicado en fecha de publicación. Deja tu resultado en los comentarios y comparte cómo organizaste tu código.

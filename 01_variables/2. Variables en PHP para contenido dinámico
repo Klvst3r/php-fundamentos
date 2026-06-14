@@ -1,0 +1,61 @@
+Que pasaria si en un sitema desarrolado algo como un aplataforma de cusos.
+y el nombre de un curso cambia, seria imposible brindar el seguimiento a dicha informacion si este contenido e estatico,
+
+Tenemos un codigo inicial
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Curso de PHP</title>
+</head>
+
+<body>
+    <h1>Bienvenido al curso de PHP</h1>
+    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Perferendis perspiciatis voluptate, omnis molestiae, tenetur aperiam corrupti, voluptates non nisi pariatur est inventore itaque dolores aliquam id libero quidem a cupiditate!</p>
+</body>
+
+</html>
+
+
+Lo modificamos agregando un parrafo.
+Ahora vamos a necesitar cambiar el bloque de PHP para trabajar con información dinamica.
+
+Va mos a trabajar con una variable de curso que va a tener un titulo 
+<?php
+$curse ="Curso Profesional de PHP";
+?>
+
+Esta estructura es singular por que estamos trabajando con programación, iniciamos la eqietqeta de php y cerramos.
+
+Reutilizando esta información para cumplir laporomesa de la tecnica llamada variable para darle ma dinamismo.
+
+Ahora podriamos utilizar est palabra clave y poder incurstarla en el contenido para que ya no sea estatico, cambia a dinamico la forma de travbajar
+
+
+
+Podemos utilizar la forma corta 
+
+ <title><?=$course; ?></title>
+
+ dandonos un codigo mas limpio.
+
+ Con una forma dinamica, podemos obtener los datos de una base de datos, o un archivo externo o de una API.
+
+ y si agregamos a la variable algo como:
+
+ $course ="Curso Profesional de PHP y Laravel";
+
+ cambiara dinamicamente en los lados donde se ha estado utilizando.
+
+ En PHP las variables comienzan con el simbolo $ y la informacion que puede contener es texto o puede ser un numero 
+
+
+ Ahora tenemos las bases para trabajar con variables.
+
+ Vamos a dar un ejemplo de uso de mas varables para el precio y la fecha del surso.
+
+ 
