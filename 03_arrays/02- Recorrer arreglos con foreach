@@ -1,0 +1,118 @@
+Resumen
+Cuando trabajas con un curso profesional de PHP y Laravel que puede tener más de 20 etiquetas, mostrar cada dato a mano se vuelve insostenible. Aquí entra el recorrido de arreglos en PHP con foreach, una técnica que automatiza la impresión de listas y se aplica igual cuando los datos vienen de una base de datos.
+
+¿Qué hace un foreach en PHP y por qué lo necesitas?
+
+El foreach recorre cada elemento de un arreglo y lo guarda en una variable temporal para que puedas imprimirlo o procesarlo. La gran ventaja: tu código funciona igual con 3 etiquetas que con 300, sin tocar una sola línea extra.
+
+¿Qué es un foreach en PHP? Es una estructura de control que recorre los elementos de un arreglo uno por uno, guardando cada valor en una variable temporal que puedes usar dentro del bloque.
+
+¿Cómo se construye el primer enfoque dentro de un bloque PHP?
+
+La primera alternativa que ves en la clase es escribir todo dentro de un único bloque PHP y usar echo para imprimir cada etiqueta. Partiendo de un archivo llamado 04_recorrerArreglos.php, la lógica queda así:
+
+php
+
+<?php $etiquetas = ['PHP', 'Laravel', 'MySQL']; foreach ($etiquetas as $etiqueta) { echo $etiqueta; } ?>
+Si agregas tres elementos más al arreglo y actualizas la página, la impresión crece automáticamente. Ese es el primer indicio de la potencia del recorrido.
+
+¿Cómo mezclar foreach con HTML de forma profesional?
+
+La segunda alternativa separa la lógica de la presentación. Abres y cierras la etiqueta PHP alrededor del HTML, dejando el marcado limpio y legible:
+
+
+
+<ul> <?php foreach ($etiquetas as $etiqueta): ?> <li><?php echo $etiqueta; ?></li> <?php endforeach; ?> </ul>
+Visualmente el resultado es el mismo, pero ganas mejor organización y profesionalismo. Esta forma es la que vas a ver en proyectos reales con Laravel y plantillas Blade.
+
+¿Cómo funciona internamente el recorrido de un arreglo?
+
+Imagina que tu arreglo tiene PHP, Laravel y MySQL. El foreach da una primera vuelta, guarda PHP en la variable temporal y lo imprime. Da una segunda vuelta, reemplaza el valor por Laravel y lo muestra. Y así hasta terminar.
+
+Es un ciclo de tres pasos que se repite por cada elemento:
+
+Pasada por el arreglo.
+Almacenamiento temporal en la variable.
+Impresión o uso del valor.
+¿Por qué usar foreach en lugar de imprimir uno por uno? Porque automatiza la salida sin importar cuántos elementos tenga el arreglo. Tres o trescientos, el código no cambia.
+
+¿Dónde se aplica este patrón en proyectos reales?
+
+Este mismo concepto aparece cada vez que recibes información desde una base de datos. La consulta te devuelve un arreglo de resultados y tú lo recorres con foreach para mostrarlo en pantalla. Es la base de cualquier listado dinámico: productos, usuarios, etiquetas, cursos relacionados.
+
+Un ejemplo concreto: en Platzi, cuando ves el curso de PHP, abajo aparecen cursos relacionados como Pensamiento Lógico. Esa lista se genera con la misma lógica que acabas de aprender.
+
+¿Cuál es el reto para practicar foreach?
+
+Crea un nuevo arreglo llamado cursosRelacionados y muéstralo debajo del primero con el título Cursos relacionados. Sigue la misma estructura del foreach separado del HTML para mantener el código ordenado.
+
+
+El curso profesional de PHP con Laravel puede contar con mas de 20 etieutas, pero no necesitamos mostrar todo ello en pantalla, uno a uno.
+
+Eso es lo que vamos a resolver con este concepto vamos a tomar el archivo final que teniamos.
+
+<?php
+$course = "Curso Profesional de PHP y Laravel";
+
+$tags = ["HTML", "CSS", "JavaScript", "Laravel"];
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><?= $course ?></title>
+</head>
+<body>
+    <h1>Bienvenido al <?= $course ?></h1>
+
+    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
+        Omnis atque, explicabo repudiandae sint quisquam, 
+        eveniet perferendis mollitia dignissimos rerum eum sunt nobis 
+        repellat numquam iste. Quaerat porro facilis voluptatem cupiditate.</p>
+
+    <p>
+        <strong>Temas: </strong>
+        <ul>
+            <li><?= $tags[1]?></li>
+            <li><?= $tags[2]?></li>
+            <li><?= $tags[3]?></li>
+        </ul>
+    </p>
+</body>
+</html>
+
+
+Para poder recorrer arreglo en php, ya sabesmo como hacer la construccion de un arreglo ahora el tema esta en como mostranos esta información.
+
+Esto debe ser de forma automatica.
+
+Asi que vamos a trabajar con, un bloque de php.
+
+l igual que con el tema del if, vamos a hacerlo con los arreglos, podremos inicar con un foreach
+
+http://localhost:5000/03_arrays/code/03_recorre_array.php
+
+al no correrlo en un servidor web, vamos a usar php pra correr los scripts desde nuestra carpeta local..
+
+Al estar dentro de nuestro proyecto, vamos aejecutar.
+
+php -S localhost:5000
+
+o especificamente la carpeta public.
+
+php -S localhost:5000 -t public
+
+Despues podemos ejecutar nuestro script desde:
+
+http://localhost:5000/03_arrays/code/03_recorre_array.php
+
+Primero vemos el resultado, se recorre el arreglo, viendo que el codigo opera de forma, automatica.
+
+Si tengo mas elementos, podemos imprimirlo d emanera automatica.
+
+
+Como podemos var es un bloque dephp dentro del html, y para omstrar una alternativa tenemos:
+
