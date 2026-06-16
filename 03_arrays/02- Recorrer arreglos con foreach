@@ -116,3 +116,28 @@ Si tengo mas elementos, podemos imprimirlo d emanera automatica.
 
 Como podemos var es un bloque dephp dentro del html, y para omstrar una alternativa tenemos:
 
+    <p>
+        <strong>Temas: </strong>
+        <ul>
+            <?php foreach ($tags as $tag) : ?>
+               <li><?= $tag ?></li>
+            <?php endforeach; ?>
+        </ul>
+
+
+
+        La presentacion es mas limpia, a nivel visual es lo mismo.
+
+El concepto de un for each toma toda la información y guarda cada uno de los elementos en una variable temporal en nuestro caso es $tag.
+
+Da una primera vuelta y guarda al primer elemento para mostrarlo, Para una muestra, automatica de un arreglo es trabajar con un bucley este concepto tambien aplica cuando la información viene de una bd.
+
+La recibimos de la misma manera y la impresin se automatiza con este estructura.
+
+
+con esto se autoamica la impresion de una o varias etieuqtes.
+
+Para un ejemplo podemos hacer un nuevo arreglo de cursos relacionados, y que esto se muestre con el tiulo debajo, y los listamos, basicamente es una logica que se utiliza en algunas plataformas.
+
+Este es el cuerso de php y puede relacionarse con otro curso por ejemplo llamado pensamiento logico.
+
